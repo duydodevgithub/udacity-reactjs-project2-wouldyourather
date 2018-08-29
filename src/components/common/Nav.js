@@ -1,5 +1,4 @@
 import React, {Component, Fragment} from 'react'
-import LoadingBar from 'react-redux-loading'
 import {NavLink, Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
 
@@ -51,7 +50,6 @@ class Nav extends Component {
                         </NavItem>
                     </BoostrapNav>
                 </Navbar>
-                <LoadingBar/>
             </Fragment>
         )
     }

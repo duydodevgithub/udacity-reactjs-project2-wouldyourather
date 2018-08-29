@@ -1,13 +1,13 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-
+import "./Leatherboard.css";
 import UserSummary from '../common/UserSummary'
 
 class Leaderboard extends Component {
     render() {
         const {users} = this.props
         return (
-            <div>
+            <div id="leaderboard">
                 <h1>Leaderboard</h1>
                 {users.map((userId) =>
                     <UserSummary key={userId} id={userId}/>

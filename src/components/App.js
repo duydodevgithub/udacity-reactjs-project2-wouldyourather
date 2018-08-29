@@ -1,8 +1,6 @@
 import React, {Component, Fragment} from 'react';
-import LoadingBar from 'react-redux-loading'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import '../App.css';
-import 'bootstrap/dist/css/bootstrap.css';
 import Dashboard from "./Dashboard";
 import Login from './Login/Login'
 import PrivateRoute from './common/PrivateRoute'
@@ -22,7 +20,6 @@ class App extends Component {
         return (
             <Router>
                 <Fragment>
-                    <LoadingBar/>
                     {this.props.loading === true
                         ? null
                         : <div>
@@ -45,5 +42,3 @@ function mapStateToProps({questions, users}) {
 }
 
 export default connect(mapStateToProps)(App);
-//TODO: optimistic behavior
-//TODO: Show friendly message when page does not exist
