@@ -6,7 +6,6 @@ export function authenticateUser(id) {
         id
     }
 }
-
 export function signOut(id) {
     return {
         type: SIGN_OUT,

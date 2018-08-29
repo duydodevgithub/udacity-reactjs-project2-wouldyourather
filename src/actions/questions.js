@@ -3,7 +3,6 @@ import {ADD_QUESTION, RECEIVE_QUESTIONS} from "./types";
 import {saveQuestion, saveQuestionAnswer} from "../utils/api"
 import {handleInitialData} from "./shared";
 
-
 export function receiveQuestions(questions) {
     return {
         type: RECEIVE_QUESTIONS,

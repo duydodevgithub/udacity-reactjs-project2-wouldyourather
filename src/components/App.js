@@ -13,6 +13,7 @@ import {isEmpty} from "../utils/helpers";
 
 class App extends Component {
     componentDidMount() {
+        console.log(this.props);
         this.props.dispatch(handleInitialData())
     }
 

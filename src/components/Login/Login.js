@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import './Login.css'
 import {authenticateUser} from "../../actions/authedUser"
 import {Redirect} from 'react-router-dom'
+import './Login.css'
 
 class Login extends Component {
     state = {
@@ -32,8 +32,6 @@ class Login extends Component {
         if (isLoggedIn) {
             return <Redirect to={from}/>
         }
-
-
         return (
             <div id="login">
                 <form onSubmit={this.handleSubmit} className="form-signin">
