@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import "./Leatherboard.css";
-import UserSummary from '../common/UserSummary'
+import UserSummary from '../UserSummary/UserSummary'
 
 class Leaderboard extends Component {
     render() {

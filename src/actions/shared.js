@@ -10,5 +10,4 @@ export function handleInitialData() {
             dispatch(receiveQuestions(questions))
         })
     }
-
 }
