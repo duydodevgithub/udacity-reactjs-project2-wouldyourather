@@ -5,13 +5,29 @@ import UserSummary from '../UserSummary/UserSummary'
 
 class Leaderboard extends Component {
     render() {
-        const {users} = this.props
+        const {users} = this.props;
+        console.log(users);
         return (
             <div id="leaderboard">
-                <h1>Leaderboard</h1>
-                {users.map((userId) =>
-                    <UserSummary key={userId} id={userId}/>
-                )}
+                <h3>Leaderboard</h3>
+                {/* generate top user */}
+                <table id="leader_board">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Profile Picture</th>
+                            <th>Question Asked</th>
+                            <th>Question Answered</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {users.map((userId) =>
+                            <UserSummary key={userId} id={userId}/>
+                        )}
+                    </tbody>
+                    
+                </table>
+                
             </div>
         )
     }

@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import {Button, Form, FormGroup, Input, Label} from 'reactstrap'
 import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
-
 import {handleAddQuestion} from "../actions/questions"
 
 class NewQuestion extends Component {
