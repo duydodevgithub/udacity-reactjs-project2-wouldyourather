@@ -8,16 +8,15 @@ import Nav from './Nav/Nav'
 const PrivateRoute = ({component: Component, isAuthenticated, ...rest}) => (
     <Route {...rest} render={(props) => {
         return (
-            isAuthenticated
-                ?
-                <div>
+            isAuthenticated ?
+                (<div>
                     <Nav/>
                     <div>
                         <div>
                             <Component {...props}/>
                         </div>
                     </div>
-                </div>
+                </div>)
                 : <Redirect to={{
                     pathname: '/login',
                     state: {from: props.location}
