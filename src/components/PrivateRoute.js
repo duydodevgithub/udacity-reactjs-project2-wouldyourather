@@ -2,8 +2,8 @@ import React, {Fragment} from 'react'
 import {Redirect, Route} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {Container, Row} from 'reactstrap'
-import {isEmpty} from "../../utils/helpers";
-import Nav from './Nav'
+import {isEmpty} from "../utils/helpers";
+import Nav from './Nav/Nav'
 
 
 const PrivateRoute = ({component: Component, isAuthenticated, ...rest}) => (

@@ -32,10 +32,11 @@ class Login extends Component {
         if (isLoggedIn) {
             return <Redirect to={from}/>
         }
+
         return (
             <div id="login">
-                <form onSubmit={this.handleSubmit} className="form-signin">
-                    <h2 className="form-heading">Pick a user</h2>
+                <form onSubmit={this.handleSubmit} className="form-group">
+                    <h2>Pick a user</h2>
                         <select id="username" className="form-control"
                                 value={this.state.username}
                                 onChange={this.handleChange}>
@@ -45,7 +46,6 @@ class Login extends Component {
                                 )
                             )}
                         </select>
-
                     <button type="submit" className="btn btn-primary btn-block">Login</button>
                 </form>
             </div>

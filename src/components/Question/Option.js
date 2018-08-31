@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import {Card, CardBody, CardSubtitle, CardTitle} from 'reactstrap'
 import './Option.css'
 
 
@@ -16,27 +15,28 @@ class Option extends Component {
         const {option, showResults, isVoted, percentage} = this.props
 
         const {text, votes} = option
+        
         return (
             showResults === false ?
                 <Link to="#" onClick={this.handleClick}>
-                    <Card className={isVoted ? ("selected-option") : ''}>
-                        <CardBody>
-                            <CardTitle>{text}</CardTitle>
+                    <div className={isVoted ? ("selected-option") : ''}>
+                        <div>
+                            <h3>{text}</h3>
                             {showResults === true &&
-                            (<CardSubtitle>Numbero Of Votes: {votes.length} ({percentage}%)</CardSubtitle>)
+                            (<p>Number Of Votes: {votes.length} ({percentage}%)</p>)
                             }
-                        </CardBody>
-                    </Card>
+                        </div>
+                    </div>
                 </Link>
                 :
-                <Card className={isVoted ? ("selected-option") : ''}>
-                    <CardBody>
-                        <CardTitle>{text}</CardTitle>
+                <div className={isVoted ? ("selected-option") : ''}>
+                    <div>
+                        <h3>{text}</h3>
                         {showResults === true &&
-                        (<CardSubtitle>Numbero Of Votes: {votes.length} ({percentage}%)</CardSubtitle>)
+                        (<p>Numbero Of Votes: {votes.length} ({percentage}%)</p>)
                         }
-                    </CardBody>
-                </Card>
+                    </div>
+                </div>
         )
     }
 }

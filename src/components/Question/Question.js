@@ -1,10 +1,18 @@
-import React, {Component, Fragment} from 'react'
-import {connect} from 'react-redux'
-import {Row} from 'reactstrap'
-import {handleAnswerQuestion} from '../../actions/questions'
-import Option from "./Option"
-import UserSummary from '../UserSummary/UserSummary'
-import MissingQuestion from "./MissingQuestion";
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {handleAnswerQuestion} from '../../actions/questions';
+import "./Question.css";
+import Option from "./Option";
+
+class NOTFOUNDQUESTION extends Component {
+    render() {
+        return (
+            <div>
+                <h1>404:Question not found</h1>
+            </div>
+        )
+    }
+}
 
 class Question extends Component {
     state = {
@@ -19,21 +27,25 @@ class Question extends Component {
     render() {
         const {question} = this.props
         return (
-            <Fragment>
+            <div>
                 {question
                     ?
                     (<div>
-                        <h1>Would you rather</h1>
-                        <Row>
-                            <UserSummary id={question.author}/>
-                        </Row>
-                        <Row>
-                            <Option questionId={question.id} optionName="optionOne" onClick={this.handleVote}/>
-                            <Option questionId={question.id} optionName="optionTwo" onClick={this.handleVote}/>
-                        </Row>
+                            <h3>Would you rather? </h3>
+                        <table>
+                            <tr>
+                                <th>
+                                    <Option questionId={question.id} optionName="optionOne" onClick={this.handleVote}/>
+                                </th>
+                                
+                                <th>
+                                    <Option questionId={question.id} optionName="optionTwo" onClick={this.handleVote}/>
+                                </th>
+                            </tr>
+                        </table>
                     </div>)
-                    : <MissingQuestion/>}
-            </Fragment>
+                    : <NOTFOUNDQUESTION/>}
+            </div>
         )
     }
 }
