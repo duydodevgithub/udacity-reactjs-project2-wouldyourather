@@ -21,9 +21,13 @@ class Option extends Component {
                 <Link to="#" onClick={this.handleClick}>
                     <div className={isVoted ? ("selected-option") : ''}>
                         <div>
-                            <h3>{text}</h3>
+                            <h4>{text}?</h4>
                             {showResults === true &&
-                            (<p>Number Of Votes: {votes.length} ({percentage}%)</p>)
+                            (   <div>
+                                    <div className="panel panel-primary">Number of vote: {votes.length}</div>
+                                    <div className="panel panel-primary">Percentage: {percentage}%</div>
+                                </div>
+                            )
                             }
                         </div>
                     </div>
@@ -31,9 +35,13 @@ class Option extends Component {
                 :
                 <div className={isVoted ? ("selected-option") : ''}>
                     <div>
-                        <h3>{text}</h3>
+                        <h4>{text}?</h4>
                         {showResults === true &&
-                        (<p>Number Of Votes: {votes.length} ({percentage}%)</p>)
+                        ( <div>
+                            <div className="panel panel-primary">Number of vote: {votes.length}</div>
+                            <div className="panel panel-primary">Percentage: {percentage}%</div>
+                            </div>
+                        )
                         }
                     </div>
                 </div>
