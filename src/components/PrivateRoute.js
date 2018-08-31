@@ -1,7 +1,6 @@
-import React, {Fragment} from 'react'
+import React from 'react'
 import {Redirect, Route} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {Container, Row} from 'reactstrap'
 import {isEmpty} from "../utils/helpers";
 import Nav from './Nav/Nav'
 
@@ -11,14 +10,14 @@ const PrivateRoute = ({component: Component, isAuthenticated, ...rest}) => (
         return (
             isAuthenticated
                 ?
-                <Fragment>
+                <div>
                     <Nav/>
-                    <Container>
-                        <Row>
+                    <div>
+                        <div>
                             <Component {...props}/>
-                        </Row>
-                    </Container>
-                </Fragment>
+                        </div>
+                    </div>
+                </div>
                 : <Redirect to={{
                     pathname: '/login',
                     state: {from: props.location}

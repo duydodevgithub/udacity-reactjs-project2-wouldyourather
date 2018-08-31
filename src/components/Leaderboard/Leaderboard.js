@@ -8,10 +8,11 @@ class Leaderboard extends Component {
         const {users} = this.props;
         console.log(users);
         return (
-            <div id="leaderboard">
-                <h3>Leaderboard</h3>
+            <div className="container">
+            <div class="panel panel-default">
+                <div class="panel-heading">Leader Board </div>
                 {/* generate top user */}
-                <table id="leader_board">
+                <table className="table">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -27,7 +28,7 @@ class Leaderboard extends Component {
                     </tbody>
                     
                 </table>
-                
+            </div>
             </div>
         )
     }

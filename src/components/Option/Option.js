@@ -6,9 +6,9 @@ import './Option.css'
 
 class Option extends Component {
     handleClick = (e) => {
-        e.preventDefault()
-        const {onClick, optionName} = this.props
-        onClick(optionName)
+        e.preventDefault();
+        const {onClick, optionName} = this.props;
+        onClick(optionName);
     }
 
     render() {
@@ -33,7 +33,7 @@ class Option extends Component {
                     <div>
                         <h3>{text}</h3>
                         {showResults === true &&
-                        (<p>Numbero Of Votes: {votes.length} ({percentage}%)</p>)
+                        (<p>Number Of Votes: {votes.length} ({percentage}%)</p>)
                         }
                     </div>
                 </div>
@@ -41,6 +41,7 @@ class Option extends Component {
     }
 }
 
+//listen to change
 function mapStateToProps({authedUser, questions, users}, {questionId, optionName}) {
     const question = questions[questionId]
     const option = question[optionName]
@@ -48,10 +49,11 @@ function mapStateToProps({authedUser, questions, users}, {questionId, optionName
 
     return {
         option,
-        isVoted: option.votes.includes(authedUser),
         showResults: Object.keys(currentUser.answers).includes(questionId),
         percentage: ((option.votes.length / (question.optionOne.votes.length + question.optionTwo.votes.length)) * 100).toFixed(2),
-        optionName
+        optionName,
+        isVoted: option.votes.includes(authedUser)
+
     }
 }
 

@@ -13,11 +13,11 @@ class UserSummary extends Component {
         const answer_num = Object.keys(user.answers).length;
 
         return (
-            <tr>
+            <tr className="text-center">
                 <td>{user.name}</td>
                 <td><img src={user.avatarURL} alt="profile_picture" /></td>
-                <td>Asked:{ask_num}</td>
-                <td>Answered:{answer_num}</td>
+                <td>{ask_num}</td>
+                <td>{answer_num}</td>
             </tr>
         )
     }

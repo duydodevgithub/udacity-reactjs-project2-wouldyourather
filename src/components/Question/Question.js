@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {handleAnswerQuestion} from '../../actions/questions';
 import "./Question.css";
-import Option from "./Option";
+import Option from "../Option/Option";
 
 class NOTFOUNDQUESTION extends Component {
     render() {
         return (
             <div>
-                <h1>404:Question not found</h1>
+                <h3 className="text-center">404:Question not found</h3>
             </div>
         )
     }
@@ -27,12 +27,13 @@ class Question extends Component {
     render() {
         const {question} = this.props
         return (
-            <div>
+            <div className="container">
+            <div className="jumbotron">
                 {question
                     ?
                     (<div>
-                            <h3>Would you rather? </h3>
-                        <table>
+                            <h3 className="text-center">Would you rather? </h3>
+                        <table className="table">
                             <tr>
                                 <th>
                                     <Option questionId={question.id} optionName="optionOne" onClick={this.handleVote}/>
@@ -45,6 +46,7 @@ class Question extends Component {
                         </table>
                     </div>)
                     : <NOTFOUNDQUESTION/>}
+                </div>
             </div>
         )
     }
@@ -52,8 +54,8 @@ class Question extends Component {
 
 function mapStateToProps({questions, users, authedUser}, props) {
     const {question_id} = props.match.params
-    const question = questions[question_id]
     const user = users[authedUser]
+    const question = questions[question_id]
 
     return {
         question,

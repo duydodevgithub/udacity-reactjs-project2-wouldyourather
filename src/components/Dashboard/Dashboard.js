@@ -6,23 +6,26 @@ import Poll from '../PollSummary';
 class Dashboard extends Component {
     render() {
         const {notAnsweredQIds, answeredQIds} = this.props
+        console.log(this.props);
         return (
-            <div id="dashboard">
-                <div id="notAnswered">
-                    <h3>Not Answered</h3>
-                    <ul>
-                        {notAnsweredQIds.map((questionId) => (
-                            <li key={questionId}><Poll id={questionId}/></li>
-                        ))}
-                    </ul>
-                </div>
-                <div id="answered">
-                    <h3>Answered</h3>
-                    <ul>
-                        {answeredQIds.map((questionId) => (
-                            <li key={questionId}><Poll id={questionId}/></li>
-                        ))}
-                    </ul>
+            <div className="container">
+                <div className="jumbotron">
+                    <div className="panel panel-default">
+                        <div className="panel-heading">Not Answered</div>
+                        <ul>
+                            {notAnsweredQIds.map((questionId) => (
+                                <li key={questionId}><Poll id={questionId}/></li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="panel panel-default">
+                        <div className="panel-heading">Answered</div>
+                        <ul>
+                            {answeredQIds.map((questionId) => (
+                                <li key={questionId}><Poll id={questionId}/></li>
+                            ))}
+                        </ul>
+                        </div>
                     </div>
             </div>
         )

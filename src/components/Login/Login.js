@@ -11,8 +11,9 @@ class Login extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault()
-        const {username} = this.state
-        const {dispatch} = this.props
+        const {username} = this.state;
+        const {dispatch} = this.props;
+        // console.log(username, dispatch);
 
         if (username !== "") {
             dispatch(authenticateUser(username))
@@ -34,7 +35,7 @@ class Login extends Component {
         }
 
         return (
-            <div id="login">
+            <div className="jumbotron">
                 <form onSubmit={this.handleSubmit} className="form-group">
                     <h2>Pick a user</h2>
                         <select id="username" className="form-control"
@@ -46,7 +47,7 @@ class Login extends Component {
                                 )
                             )}
                         </select>
-                    <button type="submit" className="btn btn-primary btn-block">Login</button>
+                    <button id="button_select" type="submit" className="btn btn-block btn-primary">Login</button>
                 </form>
             </div>
         )

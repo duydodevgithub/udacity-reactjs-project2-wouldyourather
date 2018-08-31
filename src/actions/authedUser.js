@@ -1,5 +1,6 @@
 import {AUTHENTICATE_USER, SIGN_OUT} from "./types";
 
+// action creator
 export function authenticateUser(id) {
     return {
         type: AUTHENTICATE_USER,

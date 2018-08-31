@@ -1,4 +1,4 @@
-.nav_link{
-    margin: 50px;
-    margin-bottom: 50px;
-}
+.list-inline {
+    display: flex;
+    justify-content: center;
+  }

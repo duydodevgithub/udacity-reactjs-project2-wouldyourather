@@ -32,22 +32,24 @@ class NewQuestion extends Component {
     }
 
     render() {
-        const {optionOne, optionTwo, toDashboard} = this.state
+        const {toDashboard} = this.state;
 
         if (toDashboard === true) {
             return <Redirect to='/'/>
         }
         return (
-            <div>
-                <h1>Would You Rather...</h1>
+            <div className="container">
+            <div className="jumbotron">
+                <h5 className="text-center">Would You Rather...?</h5>
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <input type="text" placeholder="Option 1" id="optionOne" onChange={this.handleChange}/>
                         <span>   or   </span>
                         <input type="text" id="optionTwo" placeholder="Option two" onChange={this.handleChange}/>
                     </div>
-                    <button className="btn btn primary" disabled={optionOne === '' && optionTwo === ''}>Add Question</button>
+                    <button className="btn btn-block btn-primary">Add Question</button>
                 </form>
+            </div>
             </div>
         )
     }
